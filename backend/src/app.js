@@ -15,6 +15,11 @@ app.use(express.urlencoded({extended : true, limit : "16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+
+app.get('/api/v1/hello', (req, res) => {
+  res.send('hello world')
+})
+
 //api for Admin registration
 import adminRouter from "./routes/admin.route.js"
 app.use("/api/v1/admin",adminRouter)
